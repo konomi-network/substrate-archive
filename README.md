@@ -52,6 +52,7 @@ cd substrate-archive/bin/polkadot-archive/
 polkadot --chain=polkadot --pruning=archive
 # Start up the substrate-archive node. `chain` can be one of `polkadot`, `kusama`, or `westend`.
 cargo run --release --  -c test_conf.toml --chain=polkadot
+docker run --rm --name postgresql -p 5432:5432 -e POSTGRES_PASSWORD=admin -e POSTGRES_DATABASE=substrate-archive -d postgres
 ```
 
 You can access the help dialog via `cargo run --release -- --help`. Note that `up` and `down` scripts are meant for convenience and are not meant to be complete. Look in the [wiki](https://github.com/paritytech/substrate-archive/wiki) for more information about the database setup.
